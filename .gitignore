@@ -40,5 +40,4 @@ node_modules
 .vagrant
 
 # Bundle
- client/build/
- client/build/*
+client/build/
