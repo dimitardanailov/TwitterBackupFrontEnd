@@ -6,12 +6,14 @@ require('angular-cookies');
 require('angular-resource');
 require('angular-material');
 require('angular-material/angular-material.css');
-require('ng-file-upload');
-require('angular-moment');
-require('angular-scroll');
-require('angular-messages');
-require('lodash');
+
+/*** Configurations ***/
+require('./angular/constants/env.js');
+
+/*** Project files ***/
 require('./app.scss');
 require('./app.js');
 require('./index.html');
 
+/*** Angular App Modules ***/
+require('./angular/appModules/homepage');

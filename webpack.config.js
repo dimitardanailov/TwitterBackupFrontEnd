@@ -1,3 +1,5 @@
+"use strict";
+
 const NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
 const path = require('path');
 const plugins = [];

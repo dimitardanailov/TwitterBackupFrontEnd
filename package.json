@@ -24,12 +24,8 @@
     "angular-cookies": "^1.4.6",
     "angular-material": "0.10.0",
     "angular-messages": "^1.4.6",
-    "angular-moment": "^0.10.2",
     "angular-resource": "^1.4.6",
-    "angular-scroll": "^0.7.2",
-    "angular-ui-router": "^0.2.15",
-    "lodash": "^3.10.1",
-    "ng-file-upload": "^5.2.0"
+    "angular-ui-router": "^0.2.15"
   },
   "devDependencies": {
     "babel": "^5.8.12",
@@ -43,6 +39,8 @@
     "file-loader": "^0.8.4",
     "gulp": "^3.9.0",
     "gulp-imagemin": "^2.3.0",
+    "gulp-ng-config": "^1.2.1",
+    "gulp-notify": "^2.2.0",
     "gulp-util": "^3.0.6",
     "html-loader": "^0.3.0",
     "image-webpack-loader": "^1.6.1",
@@ -58,9 +56,9 @@
     "webpack-angular-injector-plugin": "^1.0.0",
     "webpack-dev-server": "^1.10.1"
   },
-	"engines": {
-		"node": "0.12.7"
-	},
+  "engines": {
+    "node": "0.12.7"
+  },
   "bugs": {
     "url": "https://github.com/dimitardanailov/TwitterBackupFrontEnd/issues"
   },

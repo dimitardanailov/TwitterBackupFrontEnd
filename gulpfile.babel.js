@@ -1,18 +1,34 @@
-// Resource: http://webpack.github.io/docs/usage-with-gulp.html
-// https://github.com/webpack/webpack-with-common-libs/blob/master/gulpfile.js
 import gulp from 'gulp';
 import gutil from 'gulp-util';
+
+// Webpack
+// Resource: http://webpack.github.io/docs/usage-with-gulp.html
+// https://github.com/webpack/webpack-with-common-libs/blob/master/gulpfile.js
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
-
 const webpackConfig = require('./webpack.config.js');
 
 // Imagemin
 import gulpimagemin from 'gulp-imagemin';
 import imageminpngquant from 'imagemin-pngquant';
 
+import gulpNgConfig from 'gulp-ng-config';
+
+// Custom Modules
+import gulpErrorHandling from './gulp-error-handling' 
+
 // The development server (the recommended option for development)
 gulp.task('default', ['webpack-dev-server']);
+
+/**
+ * Task get configuration settings and create a new module with project constants
+ */ 
+gulp.task('angular:env-configuration', function () {
+	return gulp.src('./configuration/constants/env.json')
+		.pipe(gulpNgConfig('TwitterBackup.Constants'))
+		.pipe(gulp.dest('./client/angular/constants/'))
+		.on('error', gulpErrorHandling.onError);
+});
 
 /*
  * Build and watch cycle (another option for development)
@@ -20,12 +36,12 @@ gulp.task('default', ['webpack-dev-server']);
  * Disadvantage: Requests are not blocked until bundle is available,
  * can serve an old app on refresh.
  */
-gulp.task('build-dev', ['webpack:build-dev'], function() {
+gulp.task('build-dev', ['angular:env-configuration', 'webpack:build-dev'], function() {
 	gulp.watch(["client/**/*"], ["webpack:build-dev"]);
 });
 
 // Production build
-gulp.task('build', ['webpack:build']);
+gulp.task('build', ['angular:env-configuration', 'webpack:build']);
 
 gulp.task('webpack:build', function(callback) {
 	// run webpack

@@ -41,3 +41,7 @@ node_modules
 
 # Bundle
 client/build/
+
+# Constants
+configuration/constants/env.json
+client/angular/constants/env.js
