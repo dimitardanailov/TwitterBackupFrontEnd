@@ -3,7 +3,7 @@
 ### Wiki pages
   1. [Gulp.md](Wiki/Gulp.md)
   1. [Node.md](Wiki/Node.md)
-	1. [Webpack.md](Wiki/Webpack.md)
+  1. [Webpack.md](Wiki/Webpack.md)
 
 ## Project Requirements:
 
