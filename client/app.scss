@@ -1,0 +1,21 @@
+/*** Base ***/
+
+@import 'styles/base';
+
+/*** Content ***/
+/* Configurations */
+@import 'styles/content/configurations/variables';
+@import 'styles/content/configurations/mixins';
+/* Configurations */
+@import 'styles/content/content';
+@import 'styles/content/media-queries';
+/*** Content ***/
+
+/*** Presentation ***/ 
+/* Configurations */
+@import 'styles/presentation/configurations/variables';
+@import 'styles/presentation/configurations/mixins';
+/* Configurations */
+@import 'styles/presentation/gradients';
+@import 'styles/presentation/icons';
+/*** Presentation ***/ 

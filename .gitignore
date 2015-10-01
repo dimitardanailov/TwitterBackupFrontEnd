@@ -25,3 +25,23 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
+
+# Mac
+.DS_Store
+
+# Vim
+*~
+*.*~
+
+*.swp
+*.swo
+
+# Vagrant
+.vagrant
+
+# Bundle
+client/build/
+
+# Constants
+configuration/constants/env.json
+client/angular/constants/env.js

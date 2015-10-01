@@ -1,0 +1,21 @@
+@mixin borderRadius($size) {
+    -webkit-border-radius: $size;
+       -moz-border-radius: $size;
+            border-radius: $size;
+}
+
+@mixin standartGradient($fromColor, $toColor) {
+    background: $fromColor;
+    
+    background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor));
+    
+		/* Support for IE 7 and IE 8 */
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=$fromColor, endColorstr=$toColor);
+    -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr='$fromColor',EndColorStr='$toColor')";
+    
+    background-image: -webkit-linear-gradient($fromColor, $toColor);
+    background-image:    -moz-linear-gradient($fromColor, $toColor);
+    background-image:     -ms-linear-gradient($fromColor, $toColor);
+    background-image:      -o-linear-gradient($fromColor, $toColor);
+    background-image:         linear-gradient($fromColor, $toColor);
+}
