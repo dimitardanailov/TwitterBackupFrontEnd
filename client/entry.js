@@ -17,3 +17,4 @@ require('./index.html');
 
 /*** Angular App Modules ***/
 require('./angular/appModules/homepage');
+require('./angular/appModules/twitter');

@@ -7,17 +7,11 @@
  * Source and idea: https://github.com/angular-ui/ui-router/tree/master/sample
  * Main module of the application.
  */
-angular.module('TwitterBackup', [
+const app = angular.module('TwitterBackup', [
 		'TwitterBackup.homepage',
 		'ui.router',
-		'ngAnimate',
-		'ngCookies',
-		'ngResource',
-		'ngMaterial',
-		'TwitterBackup.Constants'
-	])
-	.config(appConfig)
-	.run(applicationConfiguration);
+		'ngAnimate'
+]);
 
 /**
  * @ngdoc function
@@ -30,7 +24,7 @@ angular.module('TwitterBackup', [
  * @property $httpProvider Use $httpProvider to change the default behavior of the $http service.
  * @property $stateProvider $state service is responsible for representing states as well as transitioning between them. It also provides interfaces to ask for current state or even states you're coming from.
  */
-function appConfig($urlRouterProvider, $locationProvider, $httpProvider, $stateProvider) {
+app.config(function($urlRouterProvider, $locationProvider, $httpProvider, $stateProvider, $sceDelegateProvider) {
 	'ngInject';
 
 	// Application use HTML5 History API
@@ -47,17 +41,19 @@ function appConfig($urlRouterProvider, $locationProvider, $httpProvider, $stateP
 	// Use $stateProvider to configure your states.
 	$stateProvider
 		.state('app', {
+			// With abstract set to true, that means this state can not be explicitly activated.
+			// It can only be implicitly activated by activating one of its children.
 			abstract: true,
 			template: '<section ui-view></section>'
 		});
-}
+});
 
 /**
  * @ngdoc function
  * @name TwitterBackup
  * @description Method is using to setup html5Mode, default route and project structure.
  */
-function applicationConfiguration($rootScope, $state, $stateParams) {
+app.run(function($rootScope, $state, $stateParams) {
 	'ngInject';
 
 	// It's very handy to add references to $state and $stateParams to the $rootScope
@@ -66,4 +62,4 @@ function applicationConfiguration($rootScope, $state, $stateParams) {
 	// to active whenever 'contacts.list' or one of its decendents is active.
 	// $rootScope.$state = $state;
 	// $rootScope.$stateParams = $stateParams;
-}
+});
